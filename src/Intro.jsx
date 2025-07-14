@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function Intro() {
     return (
-        <div className="absolute flex top-0 left-0 w-full h-screen overflow-hidden">
+        <div className="absolute flex top-0 left-0 w-full h-screen overflow-hidden z-50 pointer-events-none">
             <motion.div 
                 className="w-1/2 h-screen bg-black"
                 initial={{ opacity: 1, x: 0 }}
