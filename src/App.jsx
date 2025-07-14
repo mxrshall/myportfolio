@@ -1,6 +1,7 @@
 import Intro from "./Intro";
 import Homepage from "./Homepage";
 import Navigation from "./Navigation";
+import About from "./About";
 
 export default function App() {
 
@@ -9,6 +10,7 @@ export default function App() {
       <Intro />
       <Navigation />
       <Homepage />
+      <About />
     </>
   );
 }
