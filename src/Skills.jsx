@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 import Card from "./Card";
 
@@ -7,42 +6,52 @@ export default function Skills() {
     {
       title: "HTML",
       skill: 3,
+      label: "Advanced"
     },
     {
       title: "CSS",
       skill: 3,
+      label: "Advanced"
     },
     {
       title: "Tailwind",
       skill: 3,
+      label: "Advanced"
     },
     {
       title: "JavaScript",
       skill: 2,
+      label: "Slightly advanced"
     },
     {
       title: "ReactJS",
       skill: 2,
+      label: "Slightly advanced"
     },
     {
       title: "WordPress",
       skill: 2,
+      label: "Slightly advanced"
     },
     {
       title: "SASS",
       skill: 2,
+      label: "Slightly advanced"
     },
     {
       title: "PHP",
       skill: 1,
+      label: "Beginner"
     },
     {
       title: "MySQL",
       skill: 1,
+      label: "Beginner"
     },
     {
       title: "Git",
       skill: 1,
+      label: "Beginner"
     }
   ]
 
@@ -54,7 +63,8 @@ export default function Skills() {
             <Card 
               key={index}
               title={item.title}
-              skill={item.skill}          
+              skill={item.skill}
+              label={item.label}           
             />
           ))}
         </div>

@@ -8,10 +8,15 @@ import { FaJs } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
 import { SiSass } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
+import { motion } from "motion/react";
 
-export default function Card({ title, skill }) {
+export default function Card({ title, skill, label }) {
     return (
-        <div className="w-[17%] h-1/2 bg-white rounded-xl flex flex-col">
+        <motion.div
+            className="w-[17%] h-1/2 bg-white rounded-xl flex flex-col relative"
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 300 }}
+        >
             <div className="w-full h-full flex justify-center items-center">
                 {title == "HTML" &&
                     <FaHtml5 size={80} />
@@ -58,6 +63,21 @@ export default function Card({ title, skill }) {
                     style={{ backgroundColor: skill >= 3 ? "#4287f5" : "#E3E3E3" }}
                 />
             </div>
-        </div>
+            <motion.div 
+                className="w-full h-full rounded-xl bg-black/80 absolute top-0 left-0 z-10 flex flex-col justify-center items-center cursor-pointer"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+            >
+                <h1 className="text-xl text-white font-bold">
+                    {title}
+                </h1>
+                <h1 className="text-xl text-white font-bold">
+                    -
+                </h1>
+                <h1 className="text-xl text-white font-bold">
+                    {label}
+                </h1>
+            </motion.div>
+        </motion.div>
     );
 }
