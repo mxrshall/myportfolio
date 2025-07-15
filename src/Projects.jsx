@@ -8,25 +8,35 @@ import Project from "./Project";
 
 //images
 import project1 from "./images/project1.png"
+import project2 from "./images/project2.png"
+import project3 from "./images/project3.png"
 
 export default function Projects() {
 
   const projects = [
     { 
-      title: "Test",
-      image: project1
+      title: "E-Travel",
+      image: project1,
+      tags: ["JavaScript", "ReactJS"],
+      url: "https://mxrshall.github.io/E-Travel/"
     },
     { 
-      title: "Test1",
-      image: project1
+      title: "Aikido Vsetín",
+      image: project2,
+      tags: ["WordPress"],
+      url: "https://aikidovsetin.cz/"
     },
     { 
-      title: "Test2",
-      image: project1
+      title: "MakyGarage",
+      image: project3,
+      tags: ["WordPress"],
+      url: "https://www.makygarage.sk/"
     },
     { 
       title: "Test3",
-      image: project1
+      image: project1,
+      tags: ["WordPress"],
+      url: "https://www.makygarage.sk/"
     }
   ];
 
@@ -49,6 +59,7 @@ export default function Projects() {
             className="w-4/5 h-2/4 flex justify-center items-center mt-28"
             modules={[Navigation]}
             slidesPerView={3}
+            spaceBetween={30}
             loop={true}
             speed={500}
             navigation={{
@@ -61,6 +72,8 @@ export default function Projects() {
                 <Project 
                   title={item.title} 
                   image={item.image}
+                  tags={item.tags}
+                  url={item.url}
                 />
               </SwiperSlide>
             ))}
