@@ -64,7 +64,7 @@ export default function Card({ title, skill, label }) {
                 />
             </div>
             <motion.div 
-                className="w-full h-full rounded-xl bg-black/80 absolute top-0 left-0 z-10 flex flex-col justify-center items-center cursor-pointer"
+                className="w-full h-full rounded-xl bg-black/75 absolute top-0 left-0 z-10 flex flex-col justify-center items-center cursor-pointer"
                 initial={{ opacity: 0 }}
                 whileHover={{ opacity: 1 }}
             >
