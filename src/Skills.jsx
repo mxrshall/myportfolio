@@ -56,7 +56,10 @@ export default function Skills() {
   ]
 
   return (
-    <div className="w-full h-screen bg-[#E9B872] flex flex-col items-start justify-start relative px-10 pt-20">
+    <div
+      id="skills" 
+      className="w-full h-screen bg-[#E9B872] flex flex-col items-start justify-start relative px-10 pt-20"
+    >
       <SectionTitle title="Skills." color="1" />
         <div className="w-full h-4/6 flex mt-5 flex-wrap justify-center items-center gap-12">
           {skills.map((item, index) => (
