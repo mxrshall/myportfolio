@@ -52,7 +52,7 @@ export default function Card({ title, skill, label }) {
             <div className="w-full space-x-1 flex justify-center items-center pb-4">
                 <div 
                     className="w-[10%] h-3 rounded-xl" 
-                    style={{ backgroundColor: skill >= 1 ? "#4287f5" : "#E3E3E3" }}
+                    style={{ backgroundColor: skill >= 1 ? "#4287f5" : "#E3E3E3", boxShadow: "0px 0px 5px #4287f5" }}
                 />
                 <div 
                     className="w-[10%] h-3 rounded-xl" 
@@ -71,9 +71,7 @@ export default function Card({ title, skill, label }) {
                 <h1 className="text-xl text-white font-bold">
                     {title}
                 </h1>
-                <h1 className="text-xl text-white font-bold">
-                    -
-                </h1>
+                <br />
                 <h1 className="text-xl text-white font-bold">
                     {label}
                 </h1>

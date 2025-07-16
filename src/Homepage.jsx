@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import person from "./images/person.png";
 
 export default function Homepage() {
   const array = ["H", "i", ",", " ", "m", "y", " ", "n", "a", "m", "e", " ", "i", "s", " ", "M", "a", "r", "t", "i", "n"];
@@ -23,9 +24,9 @@ export default function Homepage() {
             )
           )}
         </div>
-
         <p className="text-2xl mt-5">Front End Developer</p>
       </div>
+      <img src={person} className="w-1/2 absolute bottom-0 right-0"/>
     </div>
   );
 }

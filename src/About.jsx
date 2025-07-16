@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
+import SectionButton from "./SectionButton";
 
 export default function About() {
   return (
@@ -9,9 +10,10 @@ export default function About() {
     >
       <div className="w-4/5 h-4/5 bg-[#F4F1DE] flex flex-col items-start justify-start px-10 py-20">
         <SectionTitle title="About Me." color="1" />
-        <p className="text-2xl mt-10">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-        </p>
+        <div className="w-5/6 text-2xl mt-10">
+          Hi, my name is Martin, and I’m from Slovakia. I’m currently studying at university and focusing on creating modern websites and web applications. In addition to development, I also specialize in SEO strategy and working with analytical tools, which allows me to not only build projects but also optimize them. I enjoying creating creative solutions that are both functional and visually appealing.
+        </div>
+        <SectionButton title="Download CV"/>
       </div>
     </div>
   );
