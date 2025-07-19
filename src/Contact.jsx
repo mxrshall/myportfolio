@@ -16,13 +16,13 @@ export default function Contact() {
         </div>
         <div className="flex justify-center items-center gap-3 mt-10">
           <a href="mailto:martin22.krajcovic@gmail.com">
-            <IoMdMail size={30} className="text-white hover:text-[#E9B872] transition-colors duration-300" />
+            <IoMdMail size={25} className="text-white hover:text-[#E9B872] transition-colors duration-300" />
           </a>
           <a href="https://github.com/mxrshall" target="_blank">
-            <FaGithub size={30} className="text-white hover:text-[#E9B872] transition-colors duration-300" />
+            <FaGithub size={25} className="text-white hover:text-[#E9B872] transition-colors duration-300" />
           </a>
           <a href="https://www.linkedin.com/in/martin-kraj%C4%8Dovi%C4%8D-8493a4374" target="_blank">
-            <FaLinkedin size={30} className="text-white hover:text-[#E9B872] transition-colors duration-300" />
+            <FaLinkedin size={25} className="text-white hover:text-[#E9B872] transition-colors duration-300" />
           </a>
         </div>
       </div>

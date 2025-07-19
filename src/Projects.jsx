@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 import { SwiperSlide, Swiper } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
