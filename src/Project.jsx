@@ -1,6 +1,5 @@
 import Tag from "./Tag";
 import { motion, useAnimation } from "framer-motion";
-import { useState } from "react";
 
 export default function Project({ title, image, tags, url }) {
     const imageControls = useAnimation();
