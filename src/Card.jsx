@@ -10,10 +10,13 @@ import { SiSass } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
 import { motion } from "motion/react";
 
-export default function Card({ title, skill, label }) {
+export default function Card({ title, skill, label, time }) {
     return (
         <motion.div
             className="w-[17%] h-1/2 bg-white rounded-xl flex flex-col relative"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1, transition: { delay: time * 0.1 } }}
+            viewport={{ once: true }}
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 300 }}
         >
@@ -52,15 +55,15 @@ export default function Card({ title, skill, label }) {
             <div className="w-full space-x-1 flex justify-center items-center pb-4">
                 <div 
                     className="w-[10%] h-3 rounded-xl" 
-                    style={{ backgroundColor: skill >= 1 ? "#4287f5" : "#E3E3E3", boxShadow: "0px 0px 5px #4287f5" }}
+                    style={{ backgroundColor: skill >= 1 ? "#4287f5" : "#E3E3E3", boxShadow: skill >= 1 ? "0px 0px 5px #4287f5" : "none" }}
                 />
                 <div 
                     className="w-[10%] h-3 rounded-xl" 
-                    style={{ backgroundColor: skill >= 2 ? "#4287f5" : "#E3E3E3" }}
+                    style={{ backgroundColor: skill >= 2 ? "#4287f5" : "#E3E3E3", boxShadow: skill >= 2 ? "0px 0px 5px #4287f5" : "none" }}
                 />
                 <div 
                     className="w-[10%] h-3 rounded-xl" 
-                    style={{ backgroundColor: skill >= 3 ? "#4287f5" : "#E3E3E3" }}
+                    style={{ backgroundColor: skill >= 3 ? "#4287f5" : "#E3E3E3", boxShadow: skill >= 3 ? "0px 0px 5px #4287f5" : "none"  }}
                 />
             </div>
             <motion.div 

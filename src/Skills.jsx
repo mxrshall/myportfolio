@@ -67,7 +67,8 @@ export default function Skills() {
               key={index}
               title={item.title}
               skill={item.skill}
-              label={item.label}           
+              label={item.label}
+              time={index + 1}         
             />
           ))}
         </div>
