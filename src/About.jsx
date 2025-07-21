@@ -10,9 +10,15 @@ export default function About() {
     >
       <div className="w-4/5 h-4/5 bg-[#F4F1DE] flex flex-col items-start justify-start px-10 py-20">
         <SectionTitle title="About Me." color="1" />
-        <div className="w-5/6 text-2xl my-5">
+        <motion.div 
+          className="w-5/6 text-2xl my-5"
+          initial={{ opacity: 0, x: -10 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeInOut", delay: 0.3 }}
+        >
           Hi, my name is Martin, and I’m from Slovakia. I’m currently studying at university and mainly focusing on creating modern websites and web applications. In addition to development, I also specialize in SEO strategy and working with analytical tools, which allows me to not only build projects but also optimize them. I enjoying creating creative solutions that are both functional and visually appealing.
-        </div>
+        </motion.div>
         <SectionButton title="Download CV"/>
       </div>
     </div>

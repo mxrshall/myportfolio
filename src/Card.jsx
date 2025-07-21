@@ -70,6 +70,7 @@ export default function Card({ title, skill, label, time }) {
                 className="w-full h-full rounded-xl bg-black/75 absolute top-0 left-0 z-10 flex flex-col justify-center items-center cursor-pointer"
                 initial={{ opacity: 0 }}
                 whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
             >
                 <h1 className="text-xl text-white font-bold">
                     {title}

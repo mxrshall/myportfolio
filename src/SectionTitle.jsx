@@ -1,12 +1,18 @@
+import { motion } from "framer-motion";
+
 export default function SectionTitle({ title, color }) {
     return (
         <>
-            <h1 
+            <motion.h1 
                 className="text-6xl font-bold"
                 style={{ color: color == 1 ? "black" : "white" }}
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
             >
                 {title}
-            </h1>
+            </motion.h1>
         </>
     );
 }
