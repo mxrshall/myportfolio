@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
 
 export default function Navigation() {
   const [showNav, setShowNav] = useState(true);
@@ -32,16 +33,32 @@ export default function Navigation() {
     >
       <ul className="w-1/3 h-16 mx-auto mt-4 bg-[#E9B872] rounded-full flex justify-center items-center space-x-8 text-lg font-semibold cursor-pointer">
         <Link to="about" smooth={true} duration={500}>
-          About Me
+          <motion.p
+            whileHover={{ scale: 1.1 }}
+          >
+            About Me
+          </motion.p>
         </Link>
         <Link to="skills" smooth={true} duration={500}>
-          Skills
+          <motion.p
+            whileHover={{ scale: 1.1 }}
+          >
+            Skills
+          </motion.p>
         </Link>
         <Link to="projects" smooth={true} duration={500}>
-          My Projects
+          <motion.p
+            whileHover={{ scale: 1.1 }}
+          >
+            My Projects
+          </motion.p>
         </Link>
         <Link to="contact" smooth={true} duration={500}>
-          Contact
+          <motion.p
+            whileHover={{ scale: 1.1 }}
+          >
+            Contact
+          </motion.p>
         </Link>
       </ul>
     </nav>
