@@ -9,6 +9,7 @@ import Project from "./Project";
 import project1 from "./images/project1.png"
 import project2 from "./images/project2.png"
 import project3 from "./images/project3.png"
+import project4 from "./images/project4.png";
 
 export default function Projects() {
 
@@ -32,10 +33,10 @@ export default function Projects() {
       url: "https://www.makygarage.sk/"
     },
     { 
-      title: "Test3",
-      image: project1,
-      tags: ["WordPress"],
-      url: "https://www.makygarage.sk/"
+      title: "FocusIQ",
+      image: project4,
+      tags: ["JavaScript", "ReactJS", "Extension"],
+      url: "https://mxrshall.github.io/focusTabweb/"
     }
   ];
 
