@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import person from "./images/person.png";
+import person from "./images/me.png";
 
 export default function Homepage() {
   const array = ["H", "i", ",", " ", "m", "y", " ", "n", "a", "m", "e", " ", "i", "s", " ", "M", "a", "r", "t", "i", "n"];
@@ -47,10 +47,10 @@ export default function Homepage() {
       </div>
       <motion.img 
           src={person} 
-          className="w-1/2 absolute bottom-0 right-0"
+          className="w-1/3 absolute bottom-0 right-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, ease: "easeInOut", delay: 2 }}
+          transition={{ duration: 0.5, ease: "easeInOut", delay: 1.8 }}
       />
     </div>
   );
