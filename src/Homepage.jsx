@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import person from "./images/me.png";
 
 export default function Homepage() {
   const array = ["H", "i", ",", " ", "m", "y", " ", "n", "a", "m", "e", " ", "i", "s", " ", "M", "a", "r", "t", "i", "n"];
@@ -43,6 +44,16 @@ export default function Homepage() {
         >
           Front End Developer
         </motion.p>
+      </div>
+      <div className="w-1/3 h-5/6 absolute bottom-0 right-0 flex items-center justify-left">
+        <motion.div 
+          className="w-[65vh] h-[65vh] rounded-full bg-cover bg-center"
+          style={{ backgroundImage: `url(${person})` }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: "easeInOut", delay: 1.2 }}
+        />
       </div>
     </div>
   );

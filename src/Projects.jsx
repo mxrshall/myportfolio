@@ -1,6 +1,7 @@
 import SectionTitle from "./SectionTitle";
 import { SwiperSlide, Swiper } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+import { motion } from "motion/react";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Project from "./Project";
@@ -9,7 +10,8 @@ import Project from "./Project";
 import project1 from "./images/project1.png"
 import project2 from "./images/project2.png"
 import project3 from "./images/project3.png"
-import project4 from "./images/project4.png";
+import project4 from "./images/project4.png"
+import project5 from "./images/project5.png"
 
 export default function Projects() {
 
@@ -37,13 +39,19 @@ export default function Projects() {
       image: project4,
       tags: ["JavaScript", "ReactJS", "Extension"],
       url: "https://mxrshall.github.io/focusTabweb/"
+    },
+    {
+      title: "IsJustice",
+      image: project5,
+      tags: ["JavaScript", "ReactJS"],
+      url: "https://www.isjustice.sk/"
     }
   ];
 
   const swiperStyles = {
     '--swiper-navigation-color': 'black',
     '--swiper-pagination-color': 'black',
-    '--swiper-navigation-size': '20px',
+    '--swiper-navigation-size': '28px',
   }
 
   return (
@@ -53,13 +61,18 @@ export default function Projects() {
     >
       <div className="w-4/5 h-4/5 bg-[#F4F1DE] flex flex-col items-start justify-start px-10 py-20">
         <SectionTitle title="My Projects." color="1" />
-        <div className='w-full h-full absolute top-0 left-0 flex justify-center items-center'>
+        <motion.div 
+          className='w-full h-full absolute top-0 left-0 flex justify-center items-center'
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: "easeInOut", delay: 0.7 }}
+        >
           <Swiper
             style={swiperStyles}
-            className="w-4/5 h-2/4 flex justify-center items-center mt-28"
+            className="w-[90%] h-2/4 flex justify-center items-center mt-28"
             modules={[Navigation]}
             slidesPerView={3}
-            spaceBetween={30}
             loop={true}
             speed={500}
             navigation={{
@@ -68,7 +81,10 @@ export default function Projects() {
             }}
           >
             {projects.map((item, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide 
+                key={index}
+                className="flex justify-center items-center"
+              >
                 <Project 
                   title={item.title} 
                   image={item.image}
@@ -77,10 +93,10 @@ export default function Projects() {
                 />
               </SwiperSlide>
             ))}
-              <div className="swiper-button-prev p-4 cursor-pointer" />
-              <div className="swiper-button-next p-4 cursor-pointer" />
+              <div className="swiper-button-prev pr-28 cursor-pointer" />
+              <div className="swiper-button-next pl-28 cursor-pointer" />
           </Swiper>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

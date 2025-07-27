@@ -17,7 +17,7 @@ export default function Project({ title, image, tags, url }) {
 
     return (
         <a href={url} target="_blank" rel="noopener noreferrer">
-            <div className="w-full h-full relative overflow-hidden">
+            <div className="w-5/6 h-full relative overflow-hidden mx-auto">
                 {/* Background Image */}
                 <motion.div
                     className="w-full h-[66%] bg-cover bg-center"
