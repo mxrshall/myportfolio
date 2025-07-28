@@ -24,7 +24,7 @@ export default function Project({ title, image, tags, url }) {
                     style={{ backgroundImage: `url(${image})` }}
                     animate={imageControls}
                     initial={{ height: "66%" }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.8 }}
                 />
 
                 {/* Title and Tags */}

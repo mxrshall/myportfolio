@@ -6,11 +6,13 @@ import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import Scroll from "./Scroll";
 
 export default function App() {
 
   return (
     <>
+      <Scroll />
       <Intro />
       <Navigation />
       <Homepage />

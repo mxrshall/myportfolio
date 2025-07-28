@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 
 export default function Navigation() {
@@ -25,6 +24,14 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  const handleScrollTo = (target) => {
+    if (window.lenis) {
+      window.lenis.scrollTo(target);
+    } else {
+      document.querySelector(target)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <motion.nav
       className={`w-full fixed top-0 transition-transform duration-300 z-40 ${
@@ -35,34 +42,30 @@ export default function Navigation() {
       transition={{ duration: 0.5, ease: "easeInOut", delay: 1.2 }}
     >
       <ul className="w-1/3 h-16 mx-auto mt-4 bg-[#E9B872] rounded-full flex justify-center items-center space-x-8 text-lg font-semibold cursor-pointer">
-        <Link to="about" smooth={true} duration={500}>
           <motion.p
             whileHover={{ scale: 1.1 }}
+            onClick={() => handleScrollTo("#about")}
           >
             About Me
           </motion.p>
-        </Link>
-        <Link to="skills" smooth={true} duration={500}>
           <motion.p
             whileHover={{ scale: 1.1 }}
+            onClick={() => handleScrollTo("#skills")}
           >
             Skills
           </motion.p>
-        </Link>
-        <Link to="projects" smooth={true} duration={500}>
           <motion.p
             whileHover={{ scale: 1.1 }}
+            onClick={() => handleScrollTo("#projects")}
           >
             My Projects
           </motion.p>
-        </Link>
-        <Link to="contact" smooth={true} duration={500}>
           <motion.p
             whileHover={{ scale: 1.1 }}
+            onClick={() => handleScrollTo("#contact")}
           >
             Contact
           </motion.p>
-        </Link>
       </ul>
     </motion.nav>
   );
