@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import person from "./images/me.png";
+import person from "./images/mee.png";
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 
