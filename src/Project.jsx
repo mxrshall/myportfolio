@@ -15,17 +15,24 @@ export default function Project({ title, image, tags, url }) {
         overlayControls.start({ opacity: 0 });
     };
 
+    const visit = (e) => {
+        e.preventDefault();
+        window.open(url, "_blank");
+    }
+
     return (
-        <a href={url} target="_blank" rel="noopener noreferrer">
-            <div className="w-5/6 h-full relative overflow-hidden mx-auto">
-                {/* Background Image */}
-                <motion.div
-                    className="w-full h-[66%] bg-cover bg-center"
-                    style={{ backgroundImage: `url(${image})` }}
-                    animate={imageControls}
-                    initial={{ height: "66%" }}
-                    transition={{ duration: 0.8 }}
-                />
+        <div 
+            className="w-5/6 h-full relative overflow-hidden mx-auto"
+            onClick={visit}
+        >
+            {/* Background Image */}
+            <motion.div
+                className="w-full h-[66%] bg-cover bg-center"
+                style={{ backgroundImage: `url(${image})` }}
+                animate={imageControls}
+                initial={{ height: "66%" }}
+                transition={{ duration: 0.6 }}
+            />
 
                 {/* Title and Tags */}
                 <div className="w-full h-[34%] flex flex-col items-center justify-center text-white text-xl font-bold bg-[#E9B872]">
@@ -39,18 +46,17 @@ export default function Project({ title, image, tags, url }) {
                     </div>
                 </div>
 
-                {/* Hover Overlay */}
-                <motion.div
-                    className="w-full h-full absolute top-0 left-0 bg-black/80 text-white text-2xl flex justify-center items-center cursor-pointer"
-                    animate={overlayControls}
-                    initial={{ opacity: 0 }}
-                    onHoverStart={handleHoverStart}
-                    onHoverEnd={handleHoverEnd}
-                    transition={{ duration: 0.3 }}
-                >
-                    Visit website!
-                </motion.div>
-            </div>
-        </a>
+            {/* Hover Overlay */}
+            <motion.div
+                className="w-full h-full absolute top-0 left-0 bg-black/80 text-white text-2xl flex justify-center items-center cursor-pointer"
+                animate={overlayControls}
+                initial={{ opacity: 0 }}
+                onHoverStart={handleHoverStart}
+                onHoverEnd={handleHoverEnd}
+                transition={{ duration: 0.3 }}
+            >
+                Visit website!
+            </motion.div>
+        </div>
     );
 }

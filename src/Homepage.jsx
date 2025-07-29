@@ -1,27 +1,19 @@
 import { motion } from "framer-motion";
 import person from "./images/mee.png";
-import { useEffect } from "react";
-import Lenis from "@studio-freight/lenis";
+import Lenis from "lenis";
 
 export default function Homepage() {
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smooth: true,
-    });
+  const lenis = new Lenis({
+    lerp: 0.1,
+    wheelMultiplier: 1.2,
+    smoothTouch: false,
+  });
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
+  function raf(time) {
+    lenis.raf(time);
     requestAnimationFrame(raf);
-
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
+  }
+  requestAnimationFrame(raf);
 
   const array = ["H", "i", ",", " ", "m", "y", " ", "n", "a", "m", "e", " ", "i", "s", " ", "M", "a", "r", "t", "i", "n"];
 
@@ -30,10 +22,10 @@ export default function Homepage() {
       <motion.div 
         className="w-1/3 bg-[#E9B872] absolute top-0 left-1/2 -translate-x-1/2"
         initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "66.6667%", opacity: 1 }}
-                transition={{ 
-                    height: { duration: 0.6, delay: 1.2 },
-                }}
+        animate={{ height: "66.6667%", opacity: 1 }}
+        transition={{ 
+          height: { duration: 0.6, delay: 1.2 },
+        }}
       />
       <div className="w-4/5 h-4/5 bg-[#F4F1DE] flex flex-col items-start justify-end px-10 py-20">
         <motion.div 

@@ -1,6 +1,6 @@
 import SectionTitle from "./SectionTitle";
 import { SwiperSlide, Swiper } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 import { motion } from "motion/react";
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -28,6 +28,12 @@ export default function Projects() {
       tags: ["WordPress"],
       url: "https://aikidovsetin.cz/"
     },
+    {
+      title: "IsJustice",
+      image: project5,
+      tags: ["JavaScript", "ReactJS"],
+      url: "https://www.isjustice.sk/"
+    },
     { 
       title: "MakyGarage",
       image: project3,
@@ -39,12 +45,6 @@ export default function Projects() {
       image: project4,
       tags: ["JavaScript", "ReactJS", "Extension"],
       url: "https://mxrshall.github.io/focusTabweb/"
-    },
-    {
-      title: "IsJustice",
-      image: project5,
-      tags: ["JavaScript", "ReactJS"],
-      url: "https://www.isjustice.sk/"
     }
   ];
 
@@ -71,10 +71,14 @@ export default function Projects() {
           <Swiper
             style={swiperStyles}
             className="w-[90%] h-2/4 flex justify-center items-center mt-28"
-            modules={[Navigation]}
+            modules={[Navigation, Autoplay]}
             slidesPerView={3}
             loop={true}
             speed={500}
+            autoplay={{
+              delay: 3000,             
+              disableOnInteraction: false, 
+            }}
             navigation={{
               nextEl: '.swiper-button-next',
               prevEl: '.swiper-button-prev',

@@ -27,7 +27,7 @@ export default function Contact() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.3, ease: "easeInOut", delay: 0.8 }}
+            transition={{ duration: 0.3, ease: "easeInOut", delay: 0.7 }}
           >
             <IoMdMail size={25} className="text-white hover:text-[#E9B872] transition-colors duration-300" />
           </motion.a>
@@ -37,7 +37,7 @@ export default function Contact() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.3, ease: "easeInOut", delay: 1 }}
+            transition={{ duration: 0.3, ease: "easeInOut", delay: 0.9 }}
           >
             <FaGithub size={25} className="text-white hover:text-[#E9B872] transition-colors duration-300" />
           </motion.a>
@@ -47,7 +47,7 @@ export default function Contact() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.3, ease: "easeInOut", delay: 1.2 }}
+            transition={{ duration: 0.3, ease: "easeInOut", delay: 1.1 }}
           >
             <FaLinkedin size={25} className="text-white hover:text-[#E9B872] transition-colors duration-300" />
           </motion.a>
