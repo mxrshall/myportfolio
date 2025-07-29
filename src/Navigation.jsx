@@ -34,7 +34,7 @@ export default function Navigation() {
 
   return (
     <motion.nav
-      className={`w-full fixed top-0 transition-transform duration-300 z-40 ${
+      className={`w-full fixed top-0 transition-transform duration-300 z-40 hidden md:flex ${
         showNav ? "translate-y-0" : "-translate-y-full"
       }`}
       initial={{ opacity: 0 }}
