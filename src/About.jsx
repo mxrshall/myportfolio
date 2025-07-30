@@ -8,10 +8,10 @@ export default function About() {
       id="about"
       className="w-full h-screen flex items-start justify-start relative"
     >
-      <div className="w-4/5 h-4/5 bg-[#F4F1DE] flex flex-col items-start justify-start px-10 py-20">
+      <div className="w-full h-4/5 bg-[#F4F1DE] flex flex-col items-center justify-center px-10 py-20 md:w-4/5 md:items-start md:justify-start">
         <SectionTitle title="About Me." color="1" />
         <motion.div 
-          className="w-5/6 text-2xl my-5"
+          className="w-full text-2xl my-10 text-center md:w-5/6 md:text-left md:my-5"
           initial={{ opacity: 0, x: -10 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}

@@ -1,13 +1,26 @@
 import { motion } from "framer-motion";
 import person from "./images/mee.png";
 import Lenis from "lenis";
+import { useEffect, useState } from "react";
 
 export default function Homepage() {
+  const [isMobile, setIsMobile] = useState(false);
+
   const lenis = new Lenis({
     lerp: 0.1,
     wheelMultiplier: 1.2,
     smoothTouch: false,
   });
+
+  useEffect(() => {
+    // Check on mount and on resize
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Tailwind's `md` breakpoint
+    };
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   function raf(time) {
     lenis.raf(time);
@@ -22,14 +35,14 @@ export default function Homepage() {
       <motion.div 
         className="w-2/3 bg-[#E9B872] absolute top-0 left-1/2 -translate-x-1/2 md:w-1/3"
         initial={{ height: 0, opacity: 0 }}
-        animate={{ height: "66.6667%", opacity: 1 }}
+        animate={{ height: isMobile ? "40%" : "66.6667%", opacity: 1 }}
         transition={{ 
           height: { duration: 0.6, delay: 1.2 },
         }}
       />
-      <div className="w-full h-4/5 bg-[#F4F1DE] flex flex-col items-center justify-center px-10 py-20 md:w-4/5 md:h-4/5 md:items-start md:justify-end">
+      <div className="w-full h-3/4 bg-[#F4F1DE] flex flex-col items-center justify-start px-10 py-20 md:w-4/5 md:h-4/5 md:items-start md:justify-end">
         <motion.div 
-          className="w-4/5 flex items-center flex-wrap"
+          className="w-4/5 hidden items-center flex-wrap md:flex"
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut", delay: 1.3 }}
@@ -49,6 +62,14 @@ export default function Homepage() {
             )
           )}
         </motion.div>
+        <motion.h1
+          className="text-6xl font-bold mt-5 flex text-center z-50 md:hidden"
+          initial={{ opacity: 0, y: 5 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeInOut", delay: 1.3 }}
+        >
+          Hi, my name is Martin
+        </motion.h1>
         <motion.p 
           className="text-2xl mt-5"
           initial={{ opacity: 0, x: -10 }}
@@ -58,9 +79,9 @@ export default function Homepage() {
           Front End Developer
         </motion.p>
       </div>
-      <div className="w-full h-full absolute bottom-0 right-0 flex items-center justify-center md:w-1/3 md:h-5/6 md:justify-left">
+      <div className="w-full h-full absolute bottom-0 right-0 flex items-end justify-center p-10 md:w-1/3 md:h-5/6 md:justify-left md:items-center md:p-0">
         <motion.div 
-          className="w-[30vh] h-[30vh] rounded-full bg-cover bg-center md:w-[65vh] md:h-[65vh]"
+          className="w-[35vh] h-[35vh] rounded-full bg-cover bg-center md:w-[65vh] md:h-[65vh]"
           style={{ backgroundImage: `url(${person})` }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
