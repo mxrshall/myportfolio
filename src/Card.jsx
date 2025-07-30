@@ -10,10 +10,24 @@ import { SiSass } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
 import { motion } from "motion/react";
 
+import { useEffect, useState } from "react";
+
 export default function Card({ title, skill, label, time }) {
+    const [iconSize, setIconSize] = useState(80);
+
+    useEffect(() => {
+    const handleResize = () => {
+      setIconSize(window.innerWidth < 768 ? 50 : 80);
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
     return (
         <motion.div
-            className="w-[17%] h-1/2 bg-white rounded-xl flex flex-col relative"
+            className="w-[25%] h-1/4 bg-white rounded-xl flex flex-col relative md:w-[17%] md:h-1/2"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -25,34 +39,34 @@ export default function Card({ title, skill, label, time }) {
         >
             <div className="w-full h-full flex justify-center items-center">
                 {title == "HTML" &&
-                    <FaHtml5 size={80} />
+                    <FaHtml5 size={iconSize} />
                 }  
                 {title == "CSS" &&
-                    <FaCss3Alt size={80} />
+                    <FaCss3Alt size={iconSize} />
                 }
                 {title == "Tailwind" &&
-                    <RiTailwindCssFill size={80} />
+                    <RiTailwindCssFill size={iconSize} />
                 }
                 {title == "JavaScript" &&
-                    <FaJs size={80} />
+                    <FaJs size={iconSize} />
                 }
                 {title == "ReactJS" &&
-                    <FaReact size={80} />
+                    <FaReact size={iconSize} />
                 }
                 {title == "WordPress" &&
-                    <FaWordpress size={80} />
+                    <FaWordpress size={iconSize} />
                 }
                 {title == "SASS" &&
-                    <SiSass size={80} />
+                    <SiSass size={iconSize} />
                 }
                 {title == "PHP" &&
-                    <FaPhp size={80} />
+                    <FaPhp size={iconSize} />
                 }
                 {title == "MySQL" &&
-                    <SiMysql size={80} />
+                    <SiMysql size={iconSize} />
                 }
                 {title == "Git" &&
-                    <FaGithub size={80} />
+                    <FaGithub size={iconSize} />
                 }
             </div>
             <div className="w-full space-x-1 flex justify-center items-center pb-4">

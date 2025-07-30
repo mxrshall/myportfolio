@@ -58,10 +58,10 @@ export default function Skills() {
   return (
     <div
       id="skills" 
-      className="w-full h-screen bg-[#E9B872] flex flex-col items-start justify-start relative px-10 pt-20"
+      className="w-full h-screen bg-[#E9B872] flex flex-col items-center justify-start relative px-10 pt-20 md:items-start"
     >
       <SectionTitle title="Skills." color="1" />
-        <div className="w-full h-4/6 flex mt-5 flex-wrap justify-center items-center gap-12">
+        <div className="w-full h-4/6 flex mt-12 flex-wrap justify-center items-center gap-8 md:gap-12 md:mt-5">
           {skills.map((item, index) => (
             <Card 
               key={index}
