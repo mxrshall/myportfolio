@@ -40,7 +40,7 @@ export default function Homepage() {
           height: { duration: 0.6, delay: 1.2 },
         }}
       />
-      <div className="w-full h-3/4 bg-[#F4F1DE] flex flex-col items-center justify-start px-10 py-20 md:w-4/5 md:h-4/5 md:items-start md:justify-end">
+      <div className="w-full h-3/4 bg-[#F4F1DE] flex flex-col items-center justify-start px-10 py-10 md:w-4/5 md:h-4/5 md:items-start md:justify-end md:py-20">
         <motion.div 
           className="w-4/5 hidden items-center flex-wrap md:flex"
           initial={{ opacity: 0, x: -10 }}
@@ -78,10 +78,18 @@ export default function Homepage() {
         >
           Front End Developer
         </motion.p>
-      </div>
-      <div className="w-full h-full absolute bottom-0 right-0 flex items-end justify-center p-10 md:w-1/3 md:h-5/6 md:justify-left md:items-center md:p-0">
         <motion.div 
-          className="w-[35vh] h-[35vh] rounded-full bg-cover bg-center md:w-[65vh] md:h-[65vh]"
+          className="w-[60vw] max-w-[400px] aspect-square rounded-full bg-cover bg-center mt-5 md:hidden"
+          style={{ backgroundImage: `url(${person})` }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: "easeInOut", delay: 1.2 }}
+        />
+      </div>
+      <div className="absolute bottom-0 right-0 hidden p-0 w-1/3 h-5/6 justify-left items-center md:flex">
+        <motion.div 
+          className="w-[60vw] max-w-[400px] aspect-square rounded-full bg-cover bg-center"
           style={{ backgroundImage: `url(${person})` }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
