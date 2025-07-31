@@ -21,7 +21,7 @@ export default function Contact() {
   return (
     <div 
         id="contact"
-        className="w-full h-[75vh] bg-black flex flex-col items-center justify-start relative px-10 pt-20 md:items-start"
+        className="w-full h-[60vh] bg-black flex flex-col items-center justify-start relative px-10 pt-20 md:items-start md:h-[75vh]"
     >
       <SectionTitle title="Contact." color="2" />
       <div className="w-full h-full flex flex-col justify-center items-center">

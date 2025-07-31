@@ -22,7 +22,7 @@ export default function Project({ title, image, tags, url }) {
 
     return (
         <div 
-            className="w-5/6 h-full relative overflow-hidden mx-auto"
+            className="w-5/6 h-3/4 relative overflow-hidden mx-auto mt-10 md:h-full md:mt-0"
             onClick={visit}
         >
             {/* Background Image */}

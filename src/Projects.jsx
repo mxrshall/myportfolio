@@ -2,6 +2,7 @@ import SectionTitle from "./SectionTitle";
 import { SwiperSlide, Swiper } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Project from "./Project";
@@ -14,6 +15,17 @@ import project4 from "./images/project4.png"
 import project5 from "./images/project5.png"
 
 export default function Projects() {
+  const [sliderCount, setSliderCount] = useState(3);
+    
+    useEffect(() => {
+      const handleResize = () => {
+        setSliderCount(window.innerWidth < 768 ? 1 : 3);
+      };
+    
+      handleResize(); // Initial check
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
   const projects = [
     { 
@@ -59,7 +71,7 @@ export default function Projects() {
         id="projects"
         className="w-full h-screen flex items-start justify-start relative"
     >
-      <div className="w-4/5 h-4/5 bg-[#F4F1DE] flex flex-col items-start justify-start px-10 py-20">
+      <div className="w-full h-4/5 bg-[#F4F1DE] flex flex-col items-start justify-start px-10 py-20 md:w-4/5">
         <SectionTitle title="My Projects." color="1" />
         <motion.div 
           className='w-full h-full absolute top-0 left-0 flex justify-center items-center'
@@ -72,7 +84,7 @@ export default function Projects() {
             style={swiperStyles}
             className="w-[90%] h-2/4 flex justify-center items-center mt-28"
             modules={[Navigation, Autoplay]}
-            slidesPerView={3}
+            slidesPerView={sliderCount}
             loop={true}
             speed={500}
             autoplay={{
@@ -87,7 +99,7 @@ export default function Projects() {
             {projects.map((item, index) => (
               <SwiperSlide 
                 key={index}
-                className="flex justify-center items-center"
+                className="flex items-center justify-center h-full"
               >
                 <Project 
                   title={item.title} 
