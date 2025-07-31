@@ -1,7 +1,7 @@
 import Tag from "./Tag";
 import { motion, useAnimation } from "framer-motion";
 
-export default function Project({ title, image, tags, url }) {
+export default function Project({ title, description, image, tags, url }) {
     const imageControls = useAnimation();
     const overlayControls = useAnimation();
 
@@ -35,9 +35,14 @@ export default function Project({ title, image, tags, url }) {
             />
 
                 {/* Title and Tags */}
-                <div className="w-full h-[34%] flex flex-col items-center justify-center text-white text-xl font-bold bg-[#E9B872]">
-                    <div className="w-full h-2/3 flex justify-center items-center">
-                        {title}
+                <div className="w-full h-[34%] flex flex-col items-center justify-center text-white bg-[#E9B872]">
+                    <div className="w-full h-2/3 flex flex-col justify-center items-center">
+                        <h1 className="text-2xl font-bold text-center">
+                            {title}
+                        </h1>
+                        <p className="text-base font-normal text-center">
+                            {description}
+                        </p>
                     </div>
                     <div className="w-full h-1/3 px-2 flex items-start justify-start gap-2 flex-wrap">
                         {tags?.map((item, index) => (

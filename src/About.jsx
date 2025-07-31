@@ -17,7 +17,7 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeInOut", delay: 0.3 }}
         >
-          Hi, my name is Martin, and I’m from Slovakia. I’m currently studying at university and mainly focusing on creating modern websites and web applications. In addition to development, I also specialize in SEO strategy and working with analytical tools, which allows me to not only build projects but also optimize them. I enjoying creating creative solutions that are both functional and visually appealing.
+          Hi, my name is Martin, and I’m from Slovakia. I’m currently studying at university, focusing on creating modern websites and web applications. In addition to development, I specialize in SEO strategy and working with analytical tools, which allows me to not only build projects but also optimize them. I enjoy creating creative solutions that are both functional and visually appealing.
         </motion.div>
         <SectionButton title="Download CV"/>
       </div>

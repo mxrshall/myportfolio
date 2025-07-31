@@ -82,8 +82,7 @@ export default function Homepage() {
           className="w-[60vw] max-w-[400px] aspect-square rounded-full bg-cover bg-center mt-5 md:hidden"
           style={{ backgroundImage: `url(${person})` }}
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.5, ease: "easeInOut", delay: 1.2 }}
         />
       </div>
@@ -92,8 +91,7 @@ export default function Homepage() {
           className="w-[60vw] max-w-[400px] aspect-square rounded-full bg-cover bg-center"
           style={{ backgroundImage: `url(${person})` }}
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.5, ease: "easeInOut", delay: 1.2 }}
         />
       </div>

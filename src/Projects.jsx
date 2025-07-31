@@ -13,6 +13,7 @@ import project2 from "./images/project2.png"
 import project3 from "./images/project3.png"
 import project4 from "./images/project4.png"
 import project5 from "./images/project5.png"
+import { desc } from "motion/react-client";
 
 export default function Projects() {
   const [sliderCount, setSliderCount] = useState(3);
@@ -30,30 +31,35 @@ export default function Projects() {
   const projects = [
     { 
       title: "E-Travel",
+      description: "My freetime project",
       image: project1,
       tags: ["JavaScript", "ReactJS"],
       url: "https://mxrshall.github.io/E-Travel/"
     },
     { 
       title: "Aikido Vsetín",
+      description: "Website for a client",
       image: project2,
       tags: ["WordPress"],
       url: "https://aikidovsetin.cz/"
     },
     {
       title: "IsJustice",
+      description: "Website for a client",
       image: project5,
       tags: ["JavaScript", "ReactJS"],
       url: "https://www.isjustice.sk/"
     },
     { 
       title: "MakyGarage",
+      description: "Website for a client",
       image: project3,
       tags: ["WordPress"],
       url: "https://www.makygarage.sk/"
     },
     { 
-      title: "FocusIQ",
+      title: "FocusIQ ",
+      description: "Extension for Chrome",
       image: project4,
       tags: ["JavaScript", "ReactJS", "Extension"],
       url: "https://mxrshall.github.io/focusTabweb/"
@@ -102,7 +108,8 @@ export default function Projects() {
                 className="flex items-center justify-center h-full"
               >
                 <Project 
-                  title={item.title} 
+                  title={item.title}
+                  description={item.description}
                   image={item.image}
                   tags={item.tags}
                   url={item.url}

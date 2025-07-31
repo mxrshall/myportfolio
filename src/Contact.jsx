@@ -32,7 +32,7 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeInOut", delay: 0.3 }}
         >
-          Did you like one of my projects, have a question, or an idea for collaboration? I’d love to hear from you – I’ll get back to you as soon as possible!
+          Did you like one of my projects, have a question, or an idea for collaboration? I’d love to hear from you — I’ll get back to you as soon as possible!
         </motion.div>
         <div className="flex justify-center items-center gap-3 mt-10">
           <motion.a 
