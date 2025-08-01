@@ -14,7 +14,7 @@ export default function SectionTitle({ title, color }) {
                 {title}
             </motion.h1>
             <motion.h1 
-                className="text-6xl font-bold flex md:hidden"
+                className="text-6xl font-bold flex text-center md:hidden"
                 style={{ color: color == 1 ? "black" : "white" }}
                 initial={{ opacity: 0, y: 5 }}
                 whileInView={{ opacity: 1, y: 0 }}
