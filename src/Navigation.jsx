@@ -70,7 +70,7 @@ export default function Navigation() {
             Contact
           </motion.p>
         </ul>
-        <GiHamburgerMenu className="flex m-5 md:hidden" size={40} onClick={() => setShowNavMobile(!showNavMobile)} />
+        <GiHamburgerMenu className="flex m-5 md:hidden" size={40} color={showNavMobile ? "white" : "black"} onClick={() => setShowNavMobile(!showNavMobile)} />
       </motion.nav>
       {showNavMobile && (
         <motion.div 
@@ -80,25 +80,25 @@ export default function Navigation() {
         >
           <motion.p
             whileHover={{ scale: 1.1 }}
-            onClick={() => {handleScrollTo("#about"); setShowNavMobile(false);}}
+            onClick={() => {handleScrollTo("#about"); setShowNavMobile(false); setMenuColor("black");}}
           >
             About Me
           </motion.p>
           <motion.p
             whileHover={{ scale: 1.1 }}
-            onClick={() => {handleScrollTo("#skills"); setShowNavMobile(false);}}
+            onClick={() => {handleScrollTo("#skills"); setShowNavMobile(false); setMenuColor("black");}}
           >
             Skills
           </motion.p>
           <motion.p
             whileHover={{ scale: 1.1 }}
-            onClick={() => {handleScrollTo("#projects"); setShowNavMobile(false);}}
+            onClick={() => {handleScrollTo("#projects"); setShowNavMobile(false); setMenuColor("black");}}
           >
             My Projects
           </motion.p>
           <motion.p
             whileHover={{ scale: 1.1 }}
-            onClick={() => {handleScrollTo("#contact"); setShowNavMobile(false);}}
+            onClick={() => {handleScrollTo("#contact"); setShowNavMobile(false); setMenuColor("black");}}
           >
             Contact
           </motion.p>
